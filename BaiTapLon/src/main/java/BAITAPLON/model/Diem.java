@@ -29,8 +29,60 @@ public class Diem {
 	private MonHoc monHoc;
 
 	
-	
-	
+	public String diemChu() {
+		if (diem >= 9) {
+			return "A+";
+		}
+		if (diem >= 8.5) {
+			return "A";
+		}
+		if (diem >= 8) {
+			return "B+";
+		}
+		if (diem >= 7) {
+			return "B";
+		}
+		if (diem >= 6.5) {
+			return "C+";
+		}
+		if (diem >= 5.5) {
+			return "C";
+		}
+		if (diem >= 5) {
+			return "D+";
+		}
+		if (diem >= 4) {
+			return "D";
+		}
+		return "F";	
+	}
+	public float diemSo() {
+		if (diem >= 9) {
+			return 4;
+		}
+		if (diem >= 8.5) {
+			return Float.parseFloat("3.7");
+		}
+		if (diem >= 8) {
+			return Float.parseFloat("3.5");
+		}
+		if (diem >= 7) {
+			return Float.parseFloat("3");
+		}
+		if (diem >= 6.5) {
+			return Float.parseFloat("2.5");
+		}
+		if (diem >= 5.5) {
+			return Float.parseFloat("2");
+		}
+		if (diem >= 5) {
+			return Float.parseFloat("1.5");
+		}
+		if (diem >= 4) {
+			return Float.parseFloat("1");
+		}
+		return Float.parseFloat("0");
+	}
 	public SinhVien getSinhVien() {
 		return sinhVienDiem;
 	}

@@ -17,9 +17,8 @@
 	</style>
   </head>
   <body>
-   
-	   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="/">Trang chủ</a>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="/trangchu">Trang chủ</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -29,25 +28,26 @@
 	        <a class="nav-link" href="/dangky">Đăng ký môn học <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#">Xem thời khóa biểu</a>
+	        <a class="nav-link" href="/xemthoikhoabieu">Xem thời khóa biểu</a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#">Xem điểm</a>
+	        <a class="nav-link" href="/xemdiem">Xem điểm</a>
 	      </li>
 	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+	        th:text="${session.SINHVIEN.tenSinhVien}" 
+	        aria-expanded="false">
 	          Quản lý tài khoản
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-	          <a class="dropdown-item" href="#">Sửa thông tin</a>
+	       	          <a class="dropdown-item" href="/suathongtin">Sửa thông tin</a>
 	          <a class="dropdown-item" href="/dangxuat">Đăng xuất</a>
 	        </div>
 	      </li>
 	    </ul>
 	  </div>
 	</nav>
-	
 
 	<h2 style="margin-top: 50px;">Thông báo mới nhất</h2>
 	<h3 style="color: brown;">

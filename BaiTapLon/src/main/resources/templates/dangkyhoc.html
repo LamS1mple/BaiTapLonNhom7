@@ -35,12 +35,14 @@
 	        <a class="nav-link" href="/xemdiem">Xem điểm</a>
 	      </li>
 	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+	        th:text="${session.SINHVIEN.tenSinhVien}" 
+	        aria-expanded="false">
 	          Quản lý tài khoản
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-	          <a class="dropdown-item" href="#">Sửa thông tin</a>
+	         	          <a class="dropdown-item" href="/suathongtin">Sửa thông tin</a>
 	          <a class="dropdown-item" href="/dangxuat">Đăng xuất</a>
 	        </div>
 	      </li>

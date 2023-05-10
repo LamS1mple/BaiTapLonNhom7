@@ -2,11 +2,15 @@ package BAITAPLON.CONTROLLER;
 
 import java.lang.ProcessBuilder.Redirect;
 import java.nio.channels.FileChannel.MapMode;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
+import org.atmosphere.config.service.Get;
+import org.hibernate.query.NativeQuery.ReturnableResultNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,11 +21,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import BAITAPLON.model.DangKy;
+import BAITAPLON.model.Diem;
 import BAITAPLON.model.LopHoc;
 import BAITAPLON.model.MonHoc;
 import BAITAPLON.model.SinhVien;
 import BAITAPLON.repositories.LopHocRepository;
 import BAITAPLON.service.XuLy.DangKyXuLy;
+import BAITAPLON.service.XuLy.DiemXuLy;
 import BAITAPLON.service.XuLy.LopHocXuLy;
 import BAITAPLON.service.XuLy.MonHocXuLy;
 import BAITAPLON.service.XuLy.SinhVienXuLy;
@@ -40,6 +46,8 @@ public class DangKyController {
 	private LopHocXuLy lopHocXuLy;
 	@Autowired
 	private DangKyXuLy dangKyXuLy;
+	@Autowired
+	private DiemXuLy diemXuLy;
 	
 	@GetMapping("/dangky")
 	public String dangKy(ModelMap monhocs,ModelMap dangKys  , HttpSession session) {
@@ -103,5 +111,40 @@ public class DangKyController {
 	
 	
 	@GetMapping("/xoa/{id}")
-	public String 
+	public String Xoa(@PathVariable("id") int id ) {
+		System.out.println(id);
+		this.dangKyXuLy.xoa(id);
+		return "redirect:/dangky";
+	}
+	
+	@GetMapping("/xemthoikhoabieu")
+	public String thoikhoabieu(ModelMap modelMap , HttpSession session) {
+		SinhVien sVien = (SinhVien) session.getAttribute("SINHVIEN");
+		List<DangKy> dangKies = dangKyXuLy.getAllDangKyBySV(sVien);
+		modelMap.addAttribute("dangkys" , dangKies);
+		return "xemthoikhoahieu";
+	}
+	
+	@GetMapping("/danhsachsinhvien/{id}")
+	public String xemdanhsach(@PathVariable("id") int id , ModelMap modelMap) {
+		LopHoc lpHoc = lopHocXuLy.getOneLopHoc(id);
+		List<DangKy> dangKies = dangKyXuLy.getAllSinhvien(lpHoc);
+		modelMap.addAttribute("dangkys" , dangKies);
+		return "danhsachSV";
+	}
+	
+	@GetMapping("/xemdiem")
+	public String xemDiem(ModelMap modelMap , HttpSession session) {
+		SinhVien sVien = (SinhVien) session.getAttribute("SINHVIEN");
+		List<Diem> diems = this.diemXuLy.xemDiem(sVien);
+		
+		modelMap.addAttribute("diems" ,diems);
+		return "diem";
+	}
+	
+	@GetMapping("/suathongtin")
+	public String suathongtin() {
+		return "form";
+	}
+	
 }

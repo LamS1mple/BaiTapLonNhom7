@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import BAITAPLON.model.DangKy;
+import BAITAPLON.model.LopHoc;
 import BAITAPLON.model.SinhVien;
 import BAITAPLON.repositories.DangKyRepository;
 import BAITAPLON.service.DangKyService;
@@ -26,5 +27,16 @@ public class DangKyXuLy implements DangKyService{
 	public List<DangKy> getAllDangKyBySV(SinhVien sinhVien) {
 		return this.dangKyRepository.findBySinhVienDangKy(sinhVien);
 	}
+	
+	
+	
+	@Override
+	public void xoa(int id) {
+		this.dangKyRepository.deleteById(id);
+	}
 
+	@Override
+	public List<DangKy> getAllSinhvien(LopHoc lopHoc) {
+		return dangKyRepository.findByLopHocDangKy(lopHoc);
+	}
 }
