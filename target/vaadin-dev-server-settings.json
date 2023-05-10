@@ -1,0 +1,18 @@
+{
+  "frontendFolder": "C:/Users/s1mple/Documents/workspace-spring-tool-suite-4-4.18.1.RELEASE/BaiTapLon/./frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/s1mple/Documents/workspace-spring-tool-suite-4-4.18.1.RELEASE/BaiTapLon/./frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/s1mple/Documents/workspace-spring-tool-suite-4-4.18.1.RELEASE/BaiTapLon/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\s1mple\\Documents\\workspace-spring-tool-suite-4-4.18.1.RELEASE\\BaiTapLon\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\s1mple\\Documents\\workspace-spring-tool-suite-4-4.18.1.RELEASE\\BaiTapLon\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/s1mple/Documents/workspace-spring-tool-suite-4-4.18.1.RELEASE/BaiTapLon/src/main/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/s1mple/Documents/workspace-spring-tool-suite-4-4.18.1.RELEASE/BaiTapLon/src/main/dev-bundle/config",
+  "jarResourcesFolder": "C:/Users/s1mple/Documents/workspace-spring-tool-suite-4-4.18.1.RELEASE/BaiTapLon/./frontend/generated/jar-resources",
+  "generatedFlowImportsFolder": "target/frontend",
+  "themeName": "",
+  "clientServiceWorkerSource": "C:\\Users\\s1mple\\Documents\\workspace-spring-tool-suite-4-4.18.1.RELEASE\\BaiTapLon\\target\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}
